@@ -1,0 +1,16 @@
+cc_library_static {
+    name: "libinit_oriole",
+    include_dirs: [
+        "system/core/init",
+    ],
+    static_libs: [
+        "libbase",
+    ],
+    cflags: [
+        "-Wall",
+    ],
+    srcs: ["init_oriole.cpp"],
+    recovery_available: true,
+    ramdisk_available: true,
+}
+

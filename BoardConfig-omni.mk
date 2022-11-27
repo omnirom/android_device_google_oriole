@@ -14,3 +14,4 @@
 # limitations under the License.
 #
 
+TARGET_INIT_VENDOR_LIB := //device/google/oriole:libinit_oriole
