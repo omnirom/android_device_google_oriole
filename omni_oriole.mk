@@ -17,6 +17,8 @@
 # Get the prebuilt list of APNs
 $(call inherit-product, vendor/omni/config/gsm.mk)
 
+DEVICE_PACKAGE_OVERLAYS += device/google/oriole/overlay
+
 TARGET_BOOTANIMATION_SIZE := 1080p
 
 $(call inherit-product, vendor/omni/config/common.mk)
