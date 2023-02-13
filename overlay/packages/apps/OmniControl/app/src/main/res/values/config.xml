@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- udfps support. -->
+    <bool name="config_has_udfps">true</bool>
+</resources>
