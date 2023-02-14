@@ -1,0 +1,96 @@
+OTA updates:
+
+The builds are in OTA format so they dont include bootloader
+and radio images so make sure you have flashed latest bootloader
+and radio image from google stock images
+
+bootloader-oriole-slider<version>.img
+radio-oriole<version>.img
+
+First time install:
+
+Bear with me that I simply dont care about Windooze users here
+just google for any specific instructions there.
+
+Also I will skip anything regarding bootloader unlock here
+and assume you did this before.
+
+Extract file payload.bin from <ota-file>.zip
+
+Use payload dumper to extract boot.img and vendor_boot.img from that
+payload.bin file
+
+There are different impls of payload dumper eg
+https://pypi.org/project/payload-dumper/
+https://github.com/ssut/payload-dumper-go
+
+Make sure you use the latest version of Android SDK platform tools
+https://developer.android.com/studio/releases/platform-tools
+
+Make sure you are familiar with basic usage of fastboot and adb
+commands
+
+If you care about anything on the device - NOW its the time to create
+a backup somewhere save
+
+Test adb working:
+
+> adb devices
+List of devices attached
+<serialnumber>	device
+
+Reboot into bootloader:
+
+> adb reboot bootloader
+
+Check fastboot showing device in fastboot mode:
+
+> fastboot devices
+<serialnumber>	fastboot
+
+Flash minimal recovery:
+
+> fastboot flash boot boot.img
+> fastboot flash vendor_boot vendor_boot.img
+
+Start recovery:
+
+> fastboot reboot recovery
+
+Wait until you see Android mascot on his back with the words 'No command' underneath.
+Press and hold the Power key and then press the Volume up key once while still holding
+down the Power key.
+
+Device will enter recovery
+Check adb showing device in recovery mode
+
+> adb devices
+List of devices attached
+<serialnumber>	recovery
+
+Select 'Apply update from adb'
+
+Follow instructions and run adb command
+
+> adb sideload <ota-file>.zip
+
+Select 'Wipe data/factory reset'
+
+Select 'Reboot system now'
+
+You should also flash the second slot once your setup is complete
+Either repeat the steps from above
+
+adb reboot recovery
+Apply update from adb
+adb sideload <ota-file>.zip
+Reboot system now
+
+Ofc you dont need to wipe data again then
+
+You can also just wait for the next OTA update to be available
+and use the app which will install the update on the other slot
+
+OTA updates of running system:
+
+Simply use OTA app in Control Center -> System updates
