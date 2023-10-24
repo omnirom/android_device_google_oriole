@@ -39,6 +39,8 @@ BUILD_FINGERPRINT := google/oriole/oriole:14/UP1A.231005.007/10754064:user/relea
 
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := false
+
 # for bringup to disable secure adb - copy adbkey.pub from ~/.android
 #PRODUCT_ADB_KEYS := device/google/raviole/adbkey.pub
 #PRODUCT_PACKAGES += \
