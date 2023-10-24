@@ -39,13 +39,15 @@ BUILD_FINGERPRINT := google/oriole/oriole:13/TQ3A.230605.010.A1/10198712:user/re
 
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
+PRODUCT_ENFORCE_ARTIFACT_PATH_REQUIREMENTS := false
+
 # for bringup to disable secure adb - copy adbkey.pub from ~/.android
-#PRODUCT_ADB_KEYS := device/google/raviole/adbkey.pub
-#PRODUCT_PACKAGES += \
+PRODUCT_ADB_KEYS := device/google/raviole/adbkey.pub
+PRODUCT_PACKAGES += \
     adb_keys
 
-#BOARD_BOOTCONFIG += androidboot.selinux=permissive
-#BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
+BOARD_BOOTCONFIG += androidboot.selinux=permissive
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 
 # HBM
 PRODUCT_COPY_FILES += \
@@ -61,4 +63,6 @@ PRODUCT_COPY_FILES += \
 # For Google Camera
 PRODUCT_COPY_FILES += \
     device/google/raviole/the_experiences.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/the_experiences.xml
+
+TARGET_PREBUILT_KERNEL := device/google/raviole-kernel/Image.lz4
 
