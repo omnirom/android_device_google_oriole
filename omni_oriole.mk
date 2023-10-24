@@ -62,3 +62,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     device/google/raviole/the_experiences.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/sysconfig/the_experiences.xml
 
+TARGET_PREBUILT_KERNEL := device/google/raviole-kernel/Image.lz4
+
+# wireless_charger HAL service
+include device/google/gs-common/wireless_charger/wireless_charger.mk
