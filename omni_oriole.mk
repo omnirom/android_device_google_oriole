@@ -32,10 +32,10 @@ PRODUCT_SYSTEM_NAME := oriole
 PRODUCT_SYSTEM_MANUFACTURER := Google
 
 PRODUCT_BUILD_PROP_OVERRIDES += \
-    PRIVATE_BUILD_DESC="oriole-user 13 TQ3A.230605.010.A1 10198712 release-keys"
+    PRIVATE_BUILD_DESC="oriole-user 14 UP1A.231005.007 10754064 release-keys"
 
 # defined in vendor/google_devices/oriole/proprietary/device-vendor.mk
-BUILD_FINGERPRINT := google/oriole/oriole:13/TQ3A.230605.010.A1/10198712:user/release-keys
+BUILD_FINGERPRINT := google/oriole/oriole:14/UP1A.231005.007/10754064:user/release-keys
 
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
@@ -66,3 +66,5 @@ PRODUCT_COPY_FILES += \
 
 TARGET_PREBUILT_KERNEL := device/google/raviole-kernel/Image.lz4
 
+# wireless_charger HAL service
+include device/google/gs-common/wireless_charger/wireless_charger.mk
