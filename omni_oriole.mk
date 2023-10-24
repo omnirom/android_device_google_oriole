@@ -64,3 +64,5 @@ PRODUCT_COPY_FILES += \
 
 TARGET_PREBUILT_KERNEL := device/google/raviole-kernel/Image.lz4
 
+# wireless_charger HAL service
+include device/google/gs-common/wireless_charger/wireless_charger.mk
